@@ -1,0 +1,608 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+ 
+@keyframes shakeGamePreview{
+    0%{
+        rotate: 0deg;
+    }25%{
+        rotate: 2deg;
+    }50%{
+        rotate: 0deg;
+    }75%{
+        rotate: -2deg;
+    }100%{
+        rotate: 0deg;
+    }
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+    color: white;
+}
+#logo  img{
+    width: 10vw;
+    height: auto;
+    border-radius: 20px;
+}
+body{
+    overflow-x: hidden;
+    background-color: #011627;
+}
+header{
+    background-color: #E63946;
+    height: fit-content;
+    padding-bottom: 2vh; padding-top: 1vh;
+    display: flex;
+    flex-direction: row;
+    padding-left: 2vw; padding-right: 2vw;
+}
+header nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100vw;
+    align-items: center;
+}
+header nav a{
+    background-color: rgba(0, 0, 0, 0.234);
+    height: fit-content;
+    font-size: x-large;
+    border-radius: 20px;
+    padding-top: 1vh; padding-bottom: 1vh;
+    padding-left: 1vw; padding-right: 1vw;
+    font-weight: bold;
+}
+main{
+    background-color: #011627;
+    height: fit-content;
+    padding-left: 2vw; padding-right: 2vw;
+    display: flex;
+    padding-top: 2vh; padding-bottom: 2vh;
+}
+footer{
+    height: fit-content;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    background-color: #E63946;
+}
+#bottomLogo{
+    border-radius: 20px;
+    margin-left: 3vw;
+    width: 15vw;
+}
+#accountButtons{
+    width: 10vw;
+}
+#accountButtons img{
+    width: 4vw;
+    padding-right: 1vw;
+    padding-left: 1vw;
+}
+#accountButtons a{
+    background-color: transparent;
+}
+footer nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100vw;
+    align-items: center;
+}
+footer nav a{
+    background-color: rgba(0, 0, 0, 0.234);
+    height: fit-content;
+    font-size: x-large;
+    border-radius: 20px;
+    padding-top: 1vh; padding-bottom: 1vh;
+    padding-left: .5vw; padding-right: .5vw;
+    font-weight: bold;
+}
+footer nav a:nth-child(1){
+    background-color: transparent;
+}
+#gamePreviewSection{
+    width: 55vw;
+    display: flex;
+    flex-wrap: wrap;
+    height: fit-content;
+}
+.gamePreview{
+    background-color: #073357;
+    width: 23vw;
+    margin-top: 2vh;
+    height: 37vh;
+    padding-top: 1vh; padding-bottom: 1vh;
+    border-radius: 20px;
+    display: flex;
+    margin-left: 1vw; margin-right: 1vw;
+ 
+}
+.previewContent{
+    flex-direction: column;
+}
+.gamePreview img{
+    width: 10vw;
+    height: 25vh;
+    margin-top: 2vh;
+    margin-left: 1vw;
+    border-radius: 20px;
+    object-fit: cover;
+}
+.gamePreview button{
+    width: 170%;
+    height: 5vh;
+    align-self: center;
+    margin-top: 2vh;
+    border-radius: 20px;
+    background-color: #E63946;
+    border: none;
+    margin-left: 2vw;
+    font-weight: bold;
+}
+.previewText{
+    display: grid;
+    height: fit-content;
+    margin-left: 1vw;
+}
+.previewText p{
+    font-size: smaller;
+}
+.starText p{
+    font-size: large;
+}
+#nameH1{
+    font-size: xx-large;
+    margin-top: 6vh;
+}
+#welcomeSection{
+    display: grid;
+    justify-content: center;
+    width: 45vw;
+    height: fit-content;
+    text-align: center;
+}
+#welcomeSection h2{
+    font-size: x-large;
+    font-weight: lighter;
+    margin-top: 1vh;
+}
+#welcomeSection img{
+    object-fit: cover;
+    height: 13vh;
+    width: 40vw;
+    margin-top: 3vh;
+    border-radius: 20px;
+}
+#welcomeSection p{
+    font-weight: lighter;
+    margin-top: 5vh;
+    font-size: large;
+}
+a:hover{
+    background-color: rgba(0, 0, 0, 0.425);
+}
+a{
+    transition: all .1s ease-in;
+}
+button:hover{
+    background-color: #94212a;
+}
+button{
+    transition: all .1s ease-in;
+}
+footer nav a img{
+    width: 5vw;
+}
+#socialMediaNav{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    left: 10vw;
+}
+#socialMediaNav a{
+    background-color: transparent;
+    margin-left: 1vw; margin-right: 1vw;
+}
+.gamePageGame{
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    width: 8vw;
+    background-color: #073357;
+    padding-top: 2vh; padding-bottom: 3vh;
+    padding-left: 1vw; padding-right: 1vw;
+    text-align: center;
+    border-radius: 20px;
+    height: fit-content;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    align-content: center;
+    transition: .1s ease-in all;
+}
+.gamePageGame:hover{
+    background-color: #04243d;
+    transform: scale(1.15);
+    filter: contrast(1.05) drop-shadow(0px 0px 10px black);
+    animation: shakeGamePreview 2.3s linear infinite;
+}
+.gamePageGame img{
+    width: 7vw;
+    height: 20vh;
+    margin-top: .5vh; margin-bottom: 1vh;
+    border-radius: 20px;
+    object-fit: cover;
+    align-self: center;
+}
+.gamePageGame h2{
+    font-size: small;
+}
+.gamePageGame h1{
+    font-size: medium;
+}
+#games_holder{
+    width: 75vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    height: fit-content;
+}
+#filter_options_container{
+    width: fit-content;
+    height: fit-content;
+    padding-top: 2vh; padding-bottom: 4vh;
+    background-color: rgba(0, 0, 0, 0.442);
+    float: right;
+    margin-top: 4vh;
+    padding-left: 1vw; padding-right: 1vw;
+    border-radius: 20px;
+}
+#filter_options_container form{
+    display: grid;
+    text-align: center;
+    gap: 3vh;
+}
+#filter_options_container form select{
+    accent-color: black;
+    color: black;
+    height: 5vh;
+    border-radius: 10px;
+}
+#filter_options_container form select option{
+    color: black;
+}
+#filter_options_container form input{
+    color: black;
+    height: 5vh;
+    border-radius: 10px;
+    text-align: center;
+}
+#filter_options_container form button{
+    color: black;
+    background-color: lightskyblue;
+    height: 5vh;
+    border: none;
+    border-radius: 20px;
+    transition: all .1s ease-in-out;
+}
+#filter_options_container form button:hover{
+    background-color: rgb(28, 162, 245);
+}
+#filter_options_container h1{
+    margin-bottom: 3vh;
+    width: 100%;
+    text-align: center;
+}
+#game_page_main_content{
+    display: flex;
+}
+ 
+/* luca code */
+ 
+.merchItem{
+    background-color: #04243d;
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    padding-top: 2vh; padding-bottom: 2vh;
+    padding-left: 1vw; padding-right: 5vw;
+    border-radius: 20px;
+    margin-top: 5vh;
+    margin-right: 5vw;
+    transform: scale(1);
+}
+.merchItem img{
+    height: 40vh;
+    border-radius: 20px;
+}
+.itemInfo button{
+    margin-top: 3.5vh;
+    width: fit-content;
+    height: fit-content;
+    background-color: #66161d;
+    border-radius: 10px;
+    font-size: 95%;
+   
+    border: none;
+    padding: 7%;
+    font-weight: bold;
+}
+.itemInfo{
+    display: grid;
+    width: fit-content;
+    height: fit-content;
+    align-content: center;
+    position: relative;
+    left: 1vw;
+}
+.itemImage{
+    width: fit-content;
+    height: fit-content;
+}
+.numberSelect{
+    margin-top: 3vh;
+    border-radius: 5px;
+    color: black;
+    border: none;
+ 
+    height: 3vh;
+}
+#merchContent{
+    display: flex;
+    width: 80vw;
+    flex-wrap: wrap;
+    flex-direction: row;
+    height: fit-content;
+    margin-bottom: 5vh;
+}
+.winkelwagenItem img{
+    width: 5vw;
+    border-radius: 10px;
+}
+.winkelwagenItem{
+    background-color: #04243d;
+    width: 20vw;
+    display: flex;
+    padding: 2%;
+    border-radius: 10px;
+    margin-top: 5vh;
+}
+.winkelwagenInfo h3{
+    font-size: x-large;
+}
+.winkelwagenInfo h4{
+    font-size: large;
+}
+ 
+#winkelWagen{
+    background-color: rgba(0, 0, 0, 0.144);
+    height: fit-content;
+    padding: 2%;
+   
+    margin-top: 5vh;
+    border-radius: 20px;
+}
+#winkelWagen h1{
+    font-size: xx-large;
+    width: 100%;
+    text-align: center;
+}
+#winkelwagenContext{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3vh;
+}
+#winkelwagenContext h4{
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    font-size: large;
+}
+#winkelwagenContext button{
+    background-color: #66161d;
+    width: 80%;
+    height: 5vh;
+    border: none;
+    border-radius: 20px;
+    font-size: xx-large;
+    font-weight: bold;
+}
+#contactLeft{
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+}
+#contactLeft h1{
+    font-size: 2vw;
+    margin-bottom: 5vh;
+}
+#contactLeft form{
+    display: grid;
+}
+#contactLeft form button{
+    height: 5vh;
+    background-color: #94212a;
+    border-radius: 20px;
+    border: none;
+    font-size: x-large;
+    font-weight: bold;
+    margin-top: 5vh;
+}
+#contactLeft form *:not(label){
+    margin-bottom: 3vh;
+}
+#contactLeft form input, textarea{
+    width: 80%;
+}
+#contactLeft label{
+    font-size: large;
+}
+#contactRight{
+    width: 30vw;
+}
+#contactRight h1{
+    font-size: xx-large;
+    font-weight: bold;
+}
+#contactRight img{
+    width: 100%;
+    height: 15vh;
+    object-fit: cover;
+    margin-top: 5vh;
+    border-radius: 20px;
+}
+#contactMain{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20vh;
+}
+#contentButtonAlgVo{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+#contentButtonAlgVo button{
+    width: 45%;
+    border: none;
+    background-color: #66161d;
+    font-size: large;
+    height: 5vh;
+    margin-top: 4vh;
+    border-radius: 15px;
+}
+a:visited:active:link{
+    text-decoration: none;
+}
+.reviewContent{
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}
+.reviewHolder{
+    display: flex;
+    flex-direction: row-reverse;
+    padding-top: 3vh; padding-bottom: 5vh;
+}
+.reviewHolder img{
+    width: 22vw;
+    height: auto;
+    border-radius: 20px;
+}
+.reviewContentHolder{
+    margin-left: 5vw;
+    width: 40vw;
+}
+.reviewContentHolder h1{
+    font-size: xx-large;
+}
+.reviewContentHolder h2{
+    margin-top: 1vh;
+}
+.reviewContentHolder p{
+    margin-top: 6vh;
+}
+#felix_js_pegi{
+    width: 5vw;
+    margin-top: 3vh;
+}
+#felixJSgameImg{
+    width: 30%;
+    height: auto;
+    object-fit: contain;
+}
+.navigationButtons{
+    width: 20vw;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: 80vh;
+    height: fit-content;
+}
+.navigationButtons button{
+    width: fit-content;
+    height: fit-content;
+    border: none;
+    border-radius: 15px;
+    padding-left: 2vw; padding-right: 2vw;
+    padding-top: 1vh; padding-bottom: 1vh;
+    font-size: larger;
+    text-align: center;
+    font-weight: bold;
+    margin-left: 1vw; margin-right: 1vw;
+}
+.navigationButtons button:hover{
+    filter: brightness(1.5) drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.592));
+    transform: scale(1.07);
+}
+.navigationButtons button:not(:hover){
+    filter: brightness(0.9);
+}
+.navigationButtons button:nth-child(1){
+    background-color: #073357;
+}
+.navigationButtons button:nth-child(2){
+    background-color: #66161d;
+}
+#felixJSgameStars{
+    border-bottom: 2px rgba(255, 255, 255, 0.562) solid;
+    padding-bottom: 2vh;
+}
+.submitForm input{
+    width: fit-content;
+    height: fit-content;
+    border: none;
+    border-radius: 15px;
+    padding-left: 2vw; padding-right: 2vw;
+    padding-top: 1vh; padding-bottom: 1vh;
+    font-size: larger;
+    text-align: center;
+    font-weight: bold;
+    margin-left: 1vw; margin-right: 1vw;
+}
+ 
+/*Luca ccs/*/
+
+.reviewContent {
+    display: flex;
+
+}
+
+.riviewImage img {
+    width: 34vh;
+    border-radius: 6%;
+    padding-left: 18vw; padding-right: 2vw;
+}
+ 
+.riviewText h1 {
+   font-weight: 1vw;
+   
+}
+
+.gameButton{
+    display: flex;
+    flex-direction: column;
+    padding-left: 5%; padding-right: 5%;
+}
+
+.gameButton img {
+    width: 70px;
+    
+}
+
+.buttonGame {
+    width: fit-content;
+    border-radius: 6%;
+}
+
+.pegiRating {
+    width: 34px;
+    padding-right: 10%;
+    padding-left: 750%;
+}
+
+.extraImages img {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10%; padding-bottom: 10%;    
+}
