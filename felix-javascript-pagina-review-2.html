@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="nl">
+    <head>
+        <title>Game stars - games 1 / 2</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="Gamestars reviews - Home">
+        <meta name="keywords" content="games, game, review, home, game reviews, reviews">
+        <meta name="author" content="Felix Nieuwenhuijsen">
+        <link rel="icon" href="" type="image/x-icon">
+        <link rel="stylesheet" href="style/index-style.css">
+        <script src="lib/javascript-felix-2.js" defer></script>
+    </head>
+    <body>
+        <!-- javascript pagiba -->
+        <header>
+            <a id="logo"><img src="img/logo.png"></a>
+            <nav class="navigatie">
+                <a href="index.html">Home</a>
+                <a href="games_pagina.html">Games</a>
+                <a href="merch-pagina.html">Merch</a>
+                <a href="contact-pagina.html">Contact</a>
+                <nav id="accountButtons">
+                    <a><img src="img/winkelwagen_icon.png"></a>
+                    <a><img src="img/account_icon.png"></a>
+                </nav>
+            </nav>
+
+        </header>
+        <main class="reviewContent">
+                <img id="felixJSgameImg" src="img/game1_cover.png" style="width: 20vw;">
+                <article class="reviewContentHolder">
+                    <h1 id="felixJSgameName">Game naam</h1>
+                    <h2 id="felixJSgameStars">sterren</h2>
+                    <p id="felixJSgameDesc">Beschrijving</p>
+
+                    <article>
+                        <h2>Jaar uitgebracht: <span id="felix_js_releaseYear"></span></h2>
+                        <h2>Multiplayer: <span id="felix_js_multiplayer"></span></h2>
+                        <h2>Platform: <span id="felix_js_platform"></span></h2>
+                        <h2>Genre: <span id="felix_js_genre"></span></h2>
+                        <img id="felix_js_pegi"  src="img/pegi_3.png">
+                    </article>
+                </article>
+                <article id="afbeeldingHolder">
+                    <h2>Screenshots:</h2>
+                    <img class="selectedScreenshot" id="selectedScreenshot" src="img/mgs2_screenshot_1.jpg">
+                    <div class="idleScreenshotHolder">
+                        <img class="idleScreenshot" id="screenShot1" onclick="selectScreenshot(0)" src="img/mgs2_screenshot_1.jpg">
+                        <img class="idleScreenshot" id="screenShot2" onclick="selectScreenshot(1)" src="img/mgs2_screenshot_2.png">
+                        <img class="idleScreenshot" id="screenShot3" onclick="selectScreenshot(2)" src="img/mgs2_screenshot_3.jpg">
+                    </div>
+                </article>
+            </section>
+            <section class="navigationButtons">
+                <button onclick="switchGame(true)">Vorige game</button>
+                <button onclick="switchGame()">Volgende game</button>
+            </section>
+        </main>
+        </main>
+        <footer>
+            <nav class="navigatie">
+                <a><img id="bottomLogo" src="img/klein_logo.png"></a>
+                <a href="index.html">Home</a>
+                <a href="games_pagina.html">Games</a>
+                <a href="merch-pagina.html">Merch</a>
+                <a href="contact-pagina.html">Contact</a>
+                <nav id="socialMediaNav">
+                    <a><img src="img/instagram_button.png"></a>
+                    <a><img src="img/facebook_button.png"></a>
+                    <a><img src="img/twitter_button.png"></a>
+                </nav>
+            </nav>
+        </footer>
+    </body>
+</html>
