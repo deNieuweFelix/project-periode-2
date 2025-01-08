@@ -719,3 +719,106 @@ iframe{
 #media img{
     margin-top: 12vh;
 }
+#felixJS4Form input{
+    width: 2vw;
+    height: 2vw;
+    margin-left: .2vw;
+    margin-right: 1vw;
+    accent-color: gold;
+}
+#felixJS4Form label{
+    text-align: center;
+}
+#felixJS4Form{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 20vw;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#reviewStats *{
+    margin-top: 1vh;
+    font-size: larger;
+    font-weight: bold;
+}
+#reviewStats{
+    margin-top: 3vh;
+    background-color: rgba(0, 0, 0, 0.221);
+    width: fit-content;
+    height: fit-content;
+    border-radius: 15px;
+    padding-left: 2vw; padding-right: 2vw;
+    padding-top: 1vh; padding-bottom: 1vh;
+}
+#felixReview4Main{
+    display: flex;
+    flex-direction:column;
+}
+#totalStarsDisplay{
+    width: 20vw;
+    text-align: center;
+    margin-top: 3vh;
+    margin-bottom: 1vh;
+    background-color: rgba(0, 0, 0, 0.218);
+    padding-top: 1vh; padding-bottom: 1vh;
+    border-radius: 15px;
+}
+#reviewSection{
+    margin-left: 5vw;
+    padding-top: 5vh; padding-bottom: 5vh;
+}
+#reviewSubmit{
+    background-color: rgba(0, 0, 0, 0.318);
+    border: none;
+    border-radius: 10px;
+    font-size: large;
+    font-weight: bold;
+    transform: scale(1.2);
+    transition: all ease-in-out .1s;
+    width: 20vw;
+    margin-top: 2vh;
+}
+#reviewSubmit:hover{
+    transform: scale(1.6);
+    background-color: rgba(255, 255, 255, 0.173);
+    font-size: larger;
+}
+#reviewDescription{
+    width: 20vw;
+    margin-top: 3vh;
+    margin-bottom: 1vh;
+    background-color: rgba(0, 0, 0, 0.375);
+    border: none;
+    min-width: 20vw;
+    max-width: 20vw;
+    min-height: 10vh;
+    max-height: 20vh;
+    border-radius: 15px;
+}
+#reviewDescription:focus{
+    outline: none !important;
+    outline: gray 2px;
+}
+#reviewDescription::-webkit-scrollbar{
+    background: rgba(0, 0, 0, 0.442);
+    width: 10px;
+}
+#reviewDescription::-webkit-scrollbar-thumb{
+    background-color: rgba(128, 128, 128, 0.547);
+}
+#reviewDescription::-webkit-resizer{
+    background-color: rgba(39, 39, 39, 0.437);
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 20px;
+}
+#reviewDescription::-webkit-scrollbar-button{
+    background: transparent;
+    height: 0px;
+}
+#reviewDescription::-webkit-scrollbar-corner{
+    background: transparent;
+}
+#slideShowImg{
+    
+}
