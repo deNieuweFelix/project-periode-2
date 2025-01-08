@@ -8,6 +8,9 @@
     }
 
     if (isset($_GET["submit"])) {
+        if($_GET["starRadio"] == "reset"){
+            session_unset();
+        }
         $starValue = isset($_GET["starRadio"]) && is_numeric($_GET["starRadio"]) ? (int)$_GET["starRadio"] : 0;
     
         if ($starValue >= 1 && $starValue <= 5) {
@@ -76,7 +79,16 @@
             ?>
         <main class="reviewContent" id="felixReview4Main">
             <section id="reviewSection">
+            <a onclick="expandHelp()" id="helpTextButton" title="open informatie">⍰</a>
+            <section id="helpTextContainer">
+                <article id="helpText">
+                    <p>Klik op een knop om sterren te geven (1 - 5)</p>
+                    <p>Voeg eventueel een Beschrijving toe</p>
+                    <p>Om te posten, druk je op de [>] knop</p>
+                </article>
+            </section>
             <form id="felixJS4Form" method="GET" action="felix-review-4.php">
+                <h1>Spyro 1</h1>
                 <label for="1">1</label>
                 <input id="1" name="starRadio" type="radio" value="1" onclick="changeStarsDisplay(1)">
                 <label for="2">2</label>
@@ -89,6 +101,7 @@
                 <input id="5" name="starRadio" type="radio" value="5" onclick="changeStarsDisplay(5)">
                 <textarea id="reviewDescription" maxlength="200" name="reviewDescription"></textarea>
                 <input type="submit" value=">" name="submit" id="reviewSubmit">
+                <input type="radio" value="reset" name="starRadio" id="resetButton">
             </form>
             <section id="totalStarsDisplay">
                 <h1 id="starsDisplay">☆☆☆☆☆</h1>
@@ -98,7 +111,9 @@
                 <p>Huidige reviews: <?php echo $_SESSION["amountReviews"] ?>👥</p>
             </section>
             </section>
-            <img id="slideShowImg">
+            <section id="gameInfoHolder">
+                <img id="slideShowImg">
+            </section>
         </main>
         <footer>
             <nav class="navigatie">

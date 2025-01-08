@@ -729,6 +729,13 @@ iframe{
 #felixJS4Form label{
     text-align: center;
 }
+#felixJS4Form h1{
+    width: 20vw;
+    text-align: center;
+    margin-bottom: 4vh;
+    border-bottom: 2px gray solid;
+    padding-bottom: .5vh;
+}
 #felixJS4Form{
     display: flex;
     flex-direction: row;
@@ -820,5 +827,33 @@ iframe{
     background: transparent;
 }
 #slideShowImg{
-    
+    width: 30vw;
+    height: 40vh;
+    object-fit: cover;
+}
+#gameInfoHolder{
+    position: absolute;
+    right: 5vw;
+    margin-left: 5vw;
+    margin-top: 5vh;
+}
+#helpTextButton{
+    color: red;
+    margin-bottom: 1vh;
+    text-align: center;
+    width: fit-content;
+}
+#helpTextButton:hover{
+    color: #66161d;
+}
+#helpText{
+    text-align: center;
+    width: fit-content;
+    height: fit-content;
+    margin-bottom: 3vh;
+    margin-top: 1.5vh;
+    background-color: rgba(0, 0, 0, 0.299);
+    padding-left: 1vw; padding-right: 1vw;
+    padding-top: 1vh; padding-bottom: 1vh;
+    border-radius: 15px;
 }
