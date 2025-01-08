@@ -793,7 +793,7 @@ iframe{
 }
 #reviewDescription{
     width: 20vw;
-    margin-top: 3vh;
+    margin-top: 1vh;
     margin-bottom: 1vh;
     background-color: rgba(0, 0, 0, 0.375);
     border: none;
@@ -836,6 +836,19 @@ iframe{
     right: 5vw;
     margin-left: 5vw;
     margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+}
+#gameInfoHolder button{
+    width: 10vw;
+    height: auto;
+    background-color: #66161d;
+    border: none;
+    border-radius: 10px;
+    padding: 1%;
+    margin-top: 1vh;
+    font-weight: bold;
+
 }
 #helpTextButton{
     color: red;
@@ -856,4 +869,8 @@ iframe{
     padding-left: 1vw; padding-right: 1vw;
     padding-top: 1vh; padding-bottom: 1vh;
     border-radius: 15px;
+}
+#reviewLabel{
+    margin-top: 3vh;
+    color: gray;
 }
