@@ -874,3 +874,10 @@ iframe{
     margin-top: 3vh;
     color: gray;
 }
+#extraInfoSectionFx{
+    position: absolute;
+    left: 35vw;
+    top: 40vh;
+    border-left: gray 2px solid;
+    padding-left: 1vw;
+}

@@ -72,7 +72,7 @@
                 </article>
             </section>
             <form id="felixJS4Form" method="GET" action="felix-review-4.php">
-                <h1>Spyro 1</h1>
+                <h1 id="titelFelix4">Spyro 1</h1>
                 <label for="1">1</label>
                 <input id="1" name="starRadio" type="radio" value="1" onclick="changeStarsDisplay(1)">
                 <label for="2">2</label>
@@ -95,6 +95,12 @@
                 <p>Huide beoordeling: <?php echo number_format($_SESSION["currentReview"], 2) ?>⭐</p>
                 <p>Huidige reviews: <?php echo $_SESSION["amountReviews"] ?>👥</p>
             </section>
+            <section id="extraInfoSectionFx">
+                <h1 id="makerFelix4">Maker: xxxxx</h1>
+                <h1 id="jaarFelix4">Jaar: xxxxx</h1>
+                <h1 id="genreFelix4">Genre: xxxxx</h1>
+                <h1 id="platformFelix4">Platform: xxxxx</h1>
+            </section>
             </section>
             <section id="gameInfoHolder">
                 <img id="slideShowImg">
@@ -104,7 +110,7 @@
             <script defer>
                 alert("<?php echo $_SESSION['giveAlert']; ?>");
             </script>
-            <?php unset($_SESSION["giveAlert"]); ?> <!-- Clear the message after displaying it -->
+            <?php unset($_SESSION["giveAlert"]); ?> 
             <?php endif; ?>
 
         </main>
