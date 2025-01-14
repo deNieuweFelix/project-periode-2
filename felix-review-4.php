@@ -46,7 +46,6 @@
         <script src="lib/javascript-felix-4.js" defer></script>
     </head>
     <body>
-        <!-- javascript pagiba -->
         <header>
             <a id="logo"><img src="img/logo.png"></a>
             <nav class="navigatie">
@@ -72,7 +71,7 @@
                 </article>
             </section>
             <form id="felixJS4Form" method="GET" action="felix-review-4.php">
-                <h1 id="titelFelix4">Spyro 1</h1>
+                <h1 id="titelFelix4" name="php_gameNummerGet">Spyro 1</h1>
                 <label for="1">1</label>
                 <input id="1" name="starRadio" type="radio" value="1" onclick="changeStarsDisplay(1)">
                 <label for="2">2</label>
@@ -100,6 +99,7 @@
                 <h1 id="jaarFelix4">Jaar: xxxxx</h1>
                 <h1 id="genreFelix4">Genre: xxxxx</h1>
                 <h1 id="platformFelix4">Platform: xxxxx</h1>
+                <img id="pegiDisplayFelix4">
             </section>
             </section>
             <section id="gameInfoHolder">
@@ -112,6 +112,11 @@
             </script>
             <?php unset($_SESSION["giveAlert"]); ?> 
             <?php endif; ?>
+            <section id="leeftijdWarning">
+                <h1>Je bent niet oud genoeg om deze pagina te bekijken.</h1>
+                <h1>Nog <span id="wachtJaarSpan">x</span> jaar wachten</h1>
+                <h2 id="redirectH2">Je wordt teruggestuurd naar de homepagina...</h2>
+            </section>
 
         </main>
         <footer>

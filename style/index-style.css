@@ -881,3 +881,15 @@ iframe{
     border-left: gray 2px solid;
     padding-left: 1vw;
 }
+#pegiDisplayFelix4{
+    width: 3vw;
+    height: auto;
+    margin-top: 3vh;
+    border-radius: 5px;
+    outline: white 2px solid;
+}
+#redirectH2{
+    margin-top: 5vh;
+    color: gray;
+    font-size: small;
+}
