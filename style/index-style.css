@@ -893,3 +893,67 @@ iframe{
     color: gray;
     font-size: small;
 }
+#slideHolder{
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10vh;
+}
+.slide{
+    width: 20%;
+    background-color: rgba(0, 0, 0, 0.256);
+    padding-left: 1vw; padding-right: 1vw;
+    padding-top: 1vh; padding-bottom: 1vh;
+    border-radius: 10px;
+    display: block;
+}
+.slide h2{
+    font-size: medium;
+    font-weight: bolder;
+    color: rgb(182, 182, 182);
+}
+.reviewSlide{
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    border-top: 2px solid gray;
+    border-bottom: 2px solid gray;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+.reviewInfo{
+    margin-top: 1vh;
+}
+.sterrenP{
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    border-bottom: 1px gray solid;
+    width: fit-content;
+    padding-bottom: 1vh;
+    padding-right: 1vw;
+}
+.reviewTekst{
+    margin-top: .5vh;
+    margin-bottom: 1vh;
+}
+.reviewPegi{
+    width: 2vw;
+    margin-top: 1vh;
+    margin-bottom: .5vh;
+}
+#newReviewsH1{
+    width: fit-content;
+    padding-bottom: 5vh;
+    text-align: center;
+}
+.extraInfo{
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    font-weight: normal;
+    color: rgb(193, 193, 193);
+}
+#latestReviewsFelixMain{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
