@@ -49,7 +49,7 @@ $rating = $games[$current_game]['rating'];
     <meta name="keywords" content="games, game, review, home, game reviews, reviews, little big planet, battlefield">
     <meta name="author" content="Luca de valk">
     <link rel="icon" href="" type="image/x-icon">
-    <link rel="stylesheet" href="style/index-style.css">
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
     <header>
