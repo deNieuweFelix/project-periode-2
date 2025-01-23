@@ -65,7 +65,7 @@ $games = [
                 'sterren' => 5
             ],
             [
-                'naam' => 'Elon Musk',
+                'naam' => 'Jan Bert',
                 'tekst' => 'Soms een beetje over de top, maar leuk.',
                 'sterren' => 4
             ],
