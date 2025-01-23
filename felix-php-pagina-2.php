@@ -50,7 +50,7 @@ function renderStars($count) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Gamestars reviews - Home">
-    <meta name="keywords" content="games, game, review, home, game reviews, reviews">
+    <meta name="keywords" content="games, game, review, game reviews, reviews">
     <link rel="stylesheet"href="style/index-style.css" type="text/css">
     <meta name="author" content="Felix Nieuwenhuijsen">
     <link rel="icon" href="" type="image/x-icon">

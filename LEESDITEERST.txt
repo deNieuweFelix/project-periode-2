@@ -1,0 +1,18 @@
+Beste docent die dit nakijkt,
+
+Hier zet ik wat links neer en overige info, voor als je dat nog nodig heb
+
+Github links:
+openbare github page:
+- https://github.com/deNieuweFelix/project-periode-2
+
+userstories etc.:
+- https://github.com/users/deNieuweFelix/projects/1
+
+
+extra info:
+
+De  eerste paar pagina's hebben allemaal een knop om de game te veranderen, maar daarna
+hebben we het met een variabel gedaan, omdat de opdrachten daar om vroegen.
+
+Veel succes met het nakijken!!!

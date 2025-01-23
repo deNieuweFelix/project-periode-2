@@ -1,4 +1,5 @@
 <?php
+//zet alle games in een array (associative en normaal)
 $games = [
     [
         'titel' => 'Battlefront 2',
@@ -120,7 +121,7 @@ $leeftijd = 20;
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="Gamestars reviews - Home">
-        <meta name="keywords" content="games, game, review, home, game reviews, reviews">
+        <meta name="keywords" content="games, game, review, game reviews, reviews">
         <meta name="author" content="Felix Nieuwenhuijsen">
         <link rel="icon" href="" type="image/x-icon">
         <link rel="stylesheet" href="style/index-style.css">
@@ -148,7 +149,9 @@ $leeftijd = 20;
             
             <section id="slideHolder">
                 <?php
+                //zet alle games neer die voldoen aan de leeftijds eisen
                 foreach($games as $game => $gameValue){
+                    //echoet de slides
                     if($games[$game]['pegi'] <= $leeftijd){
                         echo '<div class="slide" id="slide'.$game.'">
                         <H1>'.$games[$game]['titel'].'</H1>
@@ -160,6 +163,7 @@ $leeftijd = 20;
                             echo '<p>- <b>'.$review['naam'].'</b></p>';
                             echo '<p class="reviewTekst">'.$review['tekst'].'</p>';
                             echo '<p class="sterrenP">';
+                            //laat het aantal sterren zien met een array, die later gejoind wordt
                             $sterrenArr = [];
                             for($i = 0; $i < $review['sterren']; $i++){
                                 $sterrenArr[] = '⭐';
@@ -168,10 +172,12 @@ $leeftijd = 20;
                             for($i = 0; $i < $noStars; $i++){
                                 $sterrenArr[] = '☆';
                             }
+                            //joint de array
                             echo implode("", $sterrenArr);
                             echo '</p>';
                             echo '</div>';
                         }
+                        //echoet de overige info onderin de slide
                         echo '</div>
                         <a href="'.$games[$game]['link'].'" target="_blank""><h4 class="extraInfo"><b>Trailer</b></h4></a>
                         <h4 class="extraInfo" ><b>Platform(s):</b> '.$games[$game]['platform'].'</h4>
@@ -199,3 +205,7 @@ $leeftijd = 20;
         </footer>
     </body>
 </html>
+
+<!-- !!!!!!!!!!!!!!!!!!!!!! -->
+<!-- IK HOOP DAT DEZE PAGINA GENOEG IS, MAAR DE CSS WERKTE NIET MEE, DUS HET IS REDELIJK MINIMAAL... -->
+<!-- VERGEEF ME )): -->
