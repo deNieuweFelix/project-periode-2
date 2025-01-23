@@ -109,13 +109,13 @@ $loop = true;
 $currentGame = 0;
 
 // leeftijd (wordt misschien later nog veranderd zodat het een input is)
-$leeftijd = 16;
+$leeftijd = 20;
 
 ?>
 <!DOCTYPE html>
 <html lang="nl">
     <head>
-        <title>Game stars - games 1 / 2</title>
+        <title>Gamestars - Laatste reviews</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -142,7 +142,9 @@ $leeftijd = 16;
 
         </header>
         <main class="reviewContent" id="latestReviewsFelixMain">
-        <h1 id="newReviewsH1">Nieuwste reviews:</h1>
+            <!-- <section id="notReviewSection">
+                <h1>Nieuwste reviews:</h1>
+            </section> -->
             
             <section id="slideHolder">
                 <?php

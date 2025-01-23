@@ -952,8 +952,5 @@ iframe{
     font-weight: normal;
     color: rgb(193, 193, 193);
 }
-#latestReviewsFelixMain{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+#notReviewSection{
 }
