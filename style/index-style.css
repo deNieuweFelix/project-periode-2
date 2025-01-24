@@ -904,7 +904,7 @@ iframe{
     width: 20%;
     background-color: rgba(0, 0, 0, 0.256);
     padding-left: 1vw; padding-right: 1vw;
-    padding-top: 1vh; padding-bottom: 1vh;
+    padding-top: 2.5vh; padding-bottom: 1.5vh;
     border-radius: 10px;
     display: block;
 }
@@ -951,6 +951,13 @@ iframe{
     margin-bottom: 1vh;
     font-weight: normal;
     color: rgb(193, 193, 193);
+    text-decoration: none;
 }
-#notReviewSection{
+.embedSlideFelixLatest{
+    width: 80%;
+    height: auto;
+    align-self: center;
+    margin-top: 3vh;
+    margin-bottom: 2vh;
+    border-radius: 15px;
 }
