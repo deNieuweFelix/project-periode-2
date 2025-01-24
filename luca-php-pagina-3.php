@@ -1,36 +1,56 @@
 <?php
-// Check of de game-index in de URL staat (bijv. via een formulier met GET of POST)
-$currentGameIndex = isset($_GET['game']) ? (int) $_GET['game'] : 0;
+// User age variable (can be easily changed)
+$userAge = 18;
+
+// Game selection variable (can be changed directly in code)
+$selectedGameIndex = 0; // 0 for Witcher 3, 1 for Elden Ring
 
 // Array met game-info
 $games = [
     [
         'pegiRating' => 'img/pegi_18.png',
-        'title' => 'The witcher 3:<br> Wild Hunt',
-        'description' => '<br>The Witcher 3 is een epische RPG met een meeslepend verhaal, levendige wereld en sterke personages. De keuzes beïnvloeden de wereld, en het gevechtssysteem is uitdagend. Prachtige graphics en sfeervolle muziek maken het compleet. Een absolute must-play voor liefhebbers van avontuur en diepe verhalen!',
-        'releaseDate' => '<br>uitgebracht door CD projekt op 19 mei 2015',
+        'pegiAgeRating' => 18,
+        'title' => 'Cyberpunk <br> 2077',
+        'description' => '<br>Cyberpunk 2077 biedt een duistere, futuristische wereld vol geweld, intriges en keuzes. Het verhaal volgt V, een huurling op zoek naar de sleutel tot onsterfelijkheid. De stad Night City is prachtig en gevaarlijk, vol leven, maar ook vol criminaliteit. Met diepgaande RPG-elementen en intensieve gevechten is het een must voor fans van open werelden en sci-fi.',
+        'releaseDate' => '<br>uitgebracht door CD projekt op 10 December 2020',
         'multiplayer' => 'Deze game ondersteunt geen multiplayer',
-        'platforms' => 'Playstation, Windows, Xbox, nitendo switch',
-        'genre' => 'RPG, hack and slash',
+        'platforms' => 'Playstation, Windows, Xbox, macOs',
+        'genre' => 'Action role-playing',
         'rating' => '⭐⭐⭐',
-        'image' => 'img/theWitcher3/witcher_cover.jpg',
-        'extraImages' => ['img/theWitcher3/witcher_extra.jpg', 'img/theWitcher3/witcher_extra_2.jpg', 'img/theWitcher3/witcher_extra_3.jpg'],
+        'buttonImage' => 'img/cyber_cover.jpg',
+        'image' => 'https://www.youtube.com/embed/8X2kIfS6fb8',
+        'extraImages' => ['img/cyber_extra.jpg', 'img/cyber_extra_2.jpg', 'img/cyber_extra_3.jpg'],
         'nextGameIndex' => 1
     ],
     [   
         'pegiRating' => 'img/pegi_16.png',
-        'title' => 'Elden ring',
-        'description' => '<br>Elden Ring biedt een gigantische, mysterieuze wereld vol gevaren en geheimen. Het uitdagende vechtsysteem en de epische baasgevechten zorgen voor spanning. De prachtige omgevingen en duistere lore maken het meeslepend. Met strategische gameplay en eindeloze ontdekking is dit een meesterwerk voor RPG-liefhebbers. Een avontuur om nooit te vergeten!',
-        'releaseDate' => '<br>Uitgebracht door Bandai Namco Entertainment op 25 februari 2022',
-        'multiplayer' => 'Deze game ondersteunt multiplayer',
-        'platforms' => 'Windows, PlayStation, Xbox',
-        'genre' => 'Action role-playing',
+        'pegiAgeRating' => 16,
+        'title' => 'Spider-Man: <br> Miles Morales',
+        'description' => '<br>Spider-Man: Miles Morales is een fantastische superheldenervaring, met vlotte actie en een emotioneel verhaal. Je speelt als Miles, de jonge Spider-Man, die New York City moet beschermen. De gevechten zijn spannend en de grafische details zijn verbluffend. Het is een geweldige toevoeging voor fans van het Spider-Man-universum.',
+        'releaseDate' => '<br>Uitgebracht door Sony Interactive Entertainment op 12 November 2020',
+        'multiplayer' => 'Deze game ondersteunt geen multiplayer',
+        'platforms' => 'Windows, PlayStation',
+        'genre' => 'Action-adventure',
         'rating' => '⭐⭐⭐⭐⭐',
-        'image' => 'img/elden_cover.jpg',
-        'extraImages' => ['img/eldenRing/elden_ring_extra.jpg', 'img/eldenRing/elden_ring_extra_2.jpg', 'img/eldenRing/elden_ring_extra_3.jpg'],
+        'buttonImage' => 'img/spider_cover.jpg',
+        'image' => 'https://www.youtube.com/embed/oZXyrAfuHOo',
+        'extraImages' => ['img/spider_extra.jpg', 'img/spider_extra_2.jpg', 'img/spider_extra_3.jpg'],
         'nextGameIndex' => 0
     ]
 ];
+
+// Check if game is selected via URL (overrides $selectedGameIndex)
+$currentGameIndex = isset($_GET['game']) ? (int) $_GET['game'] : $selectedGameIndex;
+
+// Check age verification
+function canViewGame($userAge, $pegiRating) {
+    return $userAge >= $pegiRating;
+}
+
+// Check if user can view the game
+if (!canViewGame($userAge, $games[$currentGameIndex]['pegiAgeRating'])) {
+    die("Sorry, je bent niet oud genoeg om deze game te bekijken. Minimale leeftijd is {$games[$currentGameIndex]['pegiAgeRating']} jaar.");
+}
 
 // Game selecteren
 $game = $games[$currentGameIndex];
@@ -67,7 +87,7 @@ $game = $games[$currentGameIndex];
     <main>
         <section class="reviewContent">
             <article class="riviewImage">
-                <img id="gameImage" src="<?= $game['image']; ?>">
+                <iframe width="550" height="330" src="<?= $game['image']; ?>" frameborder="0" allowfullscreen></iframe>
             </article>
 
             <article class="extraImages">
@@ -95,11 +115,13 @@ $game = $games[$currentGameIndex];
                 <form method="GET">
                     <input type="hidden" name="game" value="<?= $game['nextGameIndex']; ?>">
                     <button type="submit">
-                        <img src="<?= $games[$game['nextGameIndex']]['image']; ?>" class="lastImg">
+                        <img src="<?= $games[$game['nextGameIndex']]['buttonImage']; ?>" class="lastImg">
                     </button>
                 </form>
             </article>
         </section>
+
+
     </main>
 
     <footer>
