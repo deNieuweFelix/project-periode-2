@@ -18,7 +18,7 @@ $games = [
         'genre' => 'Sport, Simulatie',
         'rating' => 4, // Gemiddelde rating, kan worden aangepast
         'reviews' => [], // Array om reviews op te slaan
-        'image' =>  ['img/fifa/fifa_extra_4.jpg', 'img/fifa/fifa_extra_3.jpg', 'img/fifa/fifa_extra_2.jpg', 'img/fifa/fifa_extra_1.jpg', 'img/fifa/fifa_extra.jpg'],
+        'image' =>  ['img/fifa_extra_4.jpg', 'img/fifa_extra_3.jpg', 'img/fifa_extra_2.jpg', 'img/fifa_extra_1.jpg', 'img/fifa_extra.jpg'],
         'nextGameIndex' => 0
     ],
 ];
