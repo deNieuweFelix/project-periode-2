@@ -25,7 +25,8 @@ $games = [
         ],
         'link' => 'https://www.youtube.com/watch?v=_q51LZ2HpbE',
         'platform' => 'PC, PS, Xbox',
-        'maker' => 'DICE'
+        'maker' => 'DICE',
+        'embed' => '<iframe class="embedSlideFelixLatest" src="https://www.youtube.com/embed/_q51LZ2HpbE" title="Star Wars Battlefront II: Official Gameplay Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
     ],
     [
         'titel' => 'Metal Gear Solid 2',
@@ -51,7 +52,8 @@ $games = [
         ],
         'link' => 'https://www.youtube.com/watch?v=cq6L1HV5gz4',
         'platform' => 'PC, PS, Xbox',
-        'maker' => 'Konami'
+        'maker' => 'Konami',
+        'embed' => '<iframe class="embedSlideFelixLatest" src="https://www.youtube.com/embed/cq6L1HV5gz4" title="Metal Gear Solid 2 Sons of Liberty - E3 2000 Trailer - PS2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
     ],
     [
         'titel' => 'GTA 5',
@@ -77,7 +79,8 @@ $games = [
         ],
         'link' => 'https://www.youtube.com/watch?v=QkkoHAzjnUs',
         'platform' => 'PC, PS, Xbox',
-        'maker' => 'Rockstar Games'
+        'maker' => 'Rockstar Games',
+        'embed' => '<iframe class="embedSlideFelixLatest" src="https://www.youtube.com/embed/QkkoHAzjnUs" title="Grand Theft Auto V Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
     ],
     [
         'titel' => 'Balatro',
@@ -103,7 +106,8 @@ $games = [
         ],
         'link' => 'https://www.youtube.com/watch?v=VUyP21iQ_-g',
         'platform' => 'PC',
-        'maker' => 'Indie Studio'
+        'maker' => 'Indie Studio',
+        'embed' => '<iframe class="embedSlideFelixLatest" src="https://www.youtube.com/embed/VUyP21iQ_-g" title="Balatro - Official Launch Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
     ]
 ];
 $loop = true;
@@ -150,41 +154,43 @@ $leeftijd = 20;
             <section id="slideHolder">
                 <?php
                 //zet alle games neer die voldoen aan de leeftijds eisen
-                foreach($games as $game => $gameValue){
-                    //echoet de slides
-                    if($games[$game]['pegi'] <= $leeftijd){
-                        echo '<div class="slide" id="slide'.$game.'">
-                        <H1>'.$games[$game]['titel'].'</H1>
-                        <H2>'.$games[$game]['genre'].'</H2>
-                        <img class="reviewPegi" src="img/pegi_'.$games[$game]['pegi'].'.png">
-                        <div class="reviewSlide">';
-                        foreach($games[$game]['reviews'] as $review){
-                            echo '<div class="reviewInfo">';
-                            echo '<p>- <b>'.$review['naam'].'</b></p>';
-                            echo '<p class="reviewTekst">'.$review['tekst'].'</p>';
-                            echo '<p class="sterrenP">';
-                            //laat het aantal sterren zien met een array, die later gejoind wordt
+                foreach ($games as $game => $gameValue) {
+                    // Echo de slides
+                    if ($games[$game]['pegi'] <= $leeftijd) {
+                        echo "
+                        <div class='slide' id='slide{$game}'>
+                            <h1>{$games[$game]['titel']}</h1>
+                            <h2>{$games[$game]['genre']}</h2>
+                            <img class='reviewPegi' src='img/pegi_{$games[$game]['pegi']}.png'>
+                            <div class='reviewSlide'>";
+                        
+                        foreach ($games[$game]['reviews'] as $review) {
                             $sterrenArr = [];
-                            for($i = 0; $i < $review['sterren']; $i++){
+                            for ($i = 0; $i < $review['sterren']; $i++) {
                                 $sterrenArr[] = '⭐';
                             }
                             $noStars = 5 - $review['sterren'];
-                            for($i = 0; $i < $noStars; $i++){
+                            for ($i = 0; $i < $noStars; $i++) {
                                 $sterrenArr[] = '☆';
                             }
-                            //joint de array
-                            echo implode("", $sterrenArr);
-                            echo '</p>';
-                            echo '</div>';
+                            $stars = implode("", $sterrenArr);
+                
+                            echo "
+                                <div class='reviewInfo'>
+                                    <p>- <b>{$review['naam']}</b></p>
+                                    <p class='reviewTekst'>{$review['tekst']}</p>
+                                    <p class='sterrenP'>{$stars}</p>
+                                </div>";
                         }
-                        //echoet de overige info onderin de slide
-                        echo '</div>
-                        <a href="'.$games[$game]['link'].'" target="_blank""><h4 class="extraInfo"><b>Trailer</b></h4></a>
-                        <h4 class="extraInfo" ><b>Platform(s):</b> '.$games[$game]['platform'].'</h4>
-                        <h4 class="extraInfo" ><b>Maker:</b> '.$games[$game]['maker'].'</h4>
-                        </div>';
+                        
+                        echo "
+                            </div>
+                            <a href='{$games[$game]['link']}' target='_blank'><h4 class='extraInfo'><b>Trailer</b> (opent in nieuw tabblad)</h4></a>
+                            <h4 class='extraInfo'><b>Platform(s):</b> {$games[$game]['platform']}</h4>
+                            <h4 class='extraInfo'><b>Maker:</b> {$games[$game]['maker']}</h4>
+                            {$games[$game]['embed']}
+                        </div>";
                     }
-
                 }
                 ?>
             </section>

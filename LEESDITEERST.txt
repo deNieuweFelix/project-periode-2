@@ -8,6 +8,7 @@ openbare github page:
 
 userstories etc.:
 - https://github.com/users/deNieuweFelix/projects/1
+(druk op de naam van de tiles om de user story te lezen)
 
 
 extra info:
