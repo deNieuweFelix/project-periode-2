@@ -3,7 +3,7 @@
 $userAge = 16;
 
 // Game selection variable (can be changed directly in code)
-$selectedGameIndex = 1; // 0 for FIFA 23, change if you want other games
+$selectedGameIndex = 0; // 0 for FIFA 23, change if you want other games
 
 // Array met game-info
 $games = [
@@ -18,20 +18,26 @@ $games = [
         'genre' => 'Sport, Simulatie',
         'rating' => 4, // Gemiddelde rating, kan worden aangepast
         'reviews' => [], // Array om reviews op te slaan
-        'image' =>  ['img/fifa_extra_4.jpg', 'img/fifa_extra_3.jpg', 'img/fifa_extra_2.jpg', 'img/fifa_extra_1.jpg', 'img/fifa_extra.jpg'],
+        'buttonImage' => 'img/fifa_cover.jpg',
+        'image' => ['img/fifa_extra_1.jpg', 'img/fifa_extra.jpg', 'img/fifa_extra_2.jpg', 'img/fifa_extra_3.jpg', 'img/fifa_extra_4.jpg'],
         'nextGameIndex' => 0
     ],
 ];
 
-
+// Check if game is selected via URL (overrides $selectedGameIndex)
 $currentGameIndex = isset($_GET['game']) ? (int) $_GET['game'] : $selectedGameIndex;
 
+// Controleer of de geselecteerde index bestaat in de games-array
+if (!isset($games[$currentGameIndex])) {
+    die("De geselecteerde game bestaat niet.");
+}
 
+// Check age verification
 function canViewGame($userAge, $pegiRating) {
     return $userAge >= $pegiRating;
 }
 
-
+// Check if user can view the game
 if (!canViewGame($userAge, $games[$currentGameIndex]['pegiAgeRating'])) {
     die("Sorry, je bent niet oud genoeg om deze game te bekijken. Minimale leeftijd is {$games[$currentGameIndex]['pegiAgeRating']} jaar.");
 }
@@ -157,7 +163,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <p>Er zijn nog geen recensies voor deze game.</p>
             <?php endif; ?>
         </article>
-        <script>
+<script>
     const images = <?= json_encode($game['image']); ?>; // This will correctly parse the array into JavaScript
     
     let currentIndex = 0;
@@ -178,7 +184,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         setInterval(nextImage, 5000); // Change image every 5 seconds
     };
 </script>
-
     </main>
 
     <footer>
@@ -195,6 +200,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </nav>
         </nav>
     </footer>
-            
+
 </body>
 </html>
